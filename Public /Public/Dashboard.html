@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin Dashboard | Engineer Mwaura</title>
+<link rel="stylesheet" href="style.css">
+<script src="app.js" defer></script>
+</head>
+<body>
+<nav>
+<h1>Admin Dashboard</h1>
+<ul>
+<li><a href="dashboard.html">Dashboard</a></li>
+<li><a href="index.html">Home</a></li>
+<li><a href="services.html">Services</a></li>
+<li><a href="machines.html">Machines</a></li>
+<li><a href="blog.html">Blog</a></li>
+<li><a href="contact.html">Contact</a></li>
+</ul>
+</nav>
+
+<section>
+<h2>Equipment Management</h2>
+<table id="equipmentTable">
+<tr><th>Name</th><th>Type</th><th>Location</th><th>Status</th></tr>
+<tr><td>MRI Scanner</td><td>Imaging</td><td>Radiology Dept.</td><td>Operational</td></tr>
+<tr><td>Ventilator</td><td>ICU</td><td>ICU Ward</td><td>Under Maintenance</td></tr>
+<tr><td>CT Scanner</td><td>Imaging</td><td>Radiology Dept.</td><td>Operational</td></tr>
+</table>
+<button onclick="addEquipment()">Add Equipment</button>
+</section>
+
+<section>
+<h2>Appointments</h2>
+<table id="appointmentsTable">
+<tr><th>Patient</th><th>Service</th><th>Date</th><th>Status</th></tr>
+<tr><td>John Doe</td><td>MRI Scan</td><td>2026-03-10</td><td>Confirmed</td></tr>
+<tr><td>Jane Smith</td><td>CT Scan</td><td>2026-03-12</td><td>Pending</td></tr>
+<tr><td>Emily Davis</td><td>Ventilator Check</td><td>2026-03-15</td><td>Completed</td></tr>
+</table>
+</section>
+
+<section>
+<h2>Payments</h2>
+<table id="paymentsTable">
+<tr><th>Phone</th><th>Amount</th><th>Date</th><th>Status</th></tr>
+<tr><td>+254729984679</td><td>5000 KES</td><td>2026-03-05</td><td>Completed</td></tr>
+<tr><td>+254701234567</td><td>3000 KES</td><td>2026-03-06</td><td>Pending</td></tr>
+<tr><td>+254712345678</td><td>4500 KES</td><td>2026-03-07</td><td>Completed</td></tr>
+</table>
+</section>
+
+<footer>© 2026 Engineer Mwaura | Biomedical Company</footer>
+</body>
+  </html>
