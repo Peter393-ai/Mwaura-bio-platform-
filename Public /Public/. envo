@@ -1,0 +1,33 @@
+# ===============================
+# Server Settings
+# ===============================
+PORT=5000
+
+# ===============================
+# MongoDB Database
+# ===============================
+# Username: mwaura_user
+# Password: inevy@393
+# Database: mwauraDB
+MONGO_URI=mongodb+srv://mwaura_user:inevy@393@cluster0.mongodb.net/mwauraDB?retryWrites=true&w=majority
+
+# ===============================
+# Branding: Assistant Biomed Mwaura 498
+OPENAI_KEY=sk-your_real_openai_api_key_here
+AI_NAME=Assistant Biomed Mwaura 498
+
+# ===============================
+# M-Pesa Payment Settings
+# ===============================
+
+# Shortcode set to your number
+MPESA_SHORTCODE=0729984679
+MPESA_PASSKEY=your_real_mpesa_passkey
+
+# ===============================
+# Contact Info
+# ===============================
+COMPANY_EMAIL=mwaurah393@gmail.com
+MPESA_PHONE=0729984679
+WHATSAPP_LINK=https://wa.me/254729984679
+CV_LINK=cv.pdf
