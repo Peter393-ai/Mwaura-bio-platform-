@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Engineer Mwaura | Biomedical Company</title>
+<link rel="stylesheet" href="style.css">
+<script src="app.js" defer></script>
+</head>
+<body>
+<nav>
+<h1>Engineer Mwaura</h1>
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="services.html">Services</a></li>
+<li><a href="machines.html">Machines</a></li>
+<li><a href="blog.html">Blog</a></li>
+<li><a href="contact.html">Contact</a></li>
+<li><a href="dashboard.html">Admin</a></li>
+</ul>
+</nav>
+
+<section>
+<h2>Welcome to Engineer Mwaura Biomedical Services</h2>
+<p>Advanced hospital equipment, maintenance, and AI support.</p>
+<a href="cv.pdf" download class="card">Download Company Brochure</a>
+</section>
+
+<section>
+<h2>Ask AI Assistant</h2>
+<input type="text" id="aiInput" placeholder="Ask about services">
+<button onclick="askAI()">Ask</button>
+<p id="aiReply"></p>
+</section>
+
+<footer>© 2026 Engineer Mwaura | Biomedical Company</footer>
+<a class="whatsapp" href="https://wa.me/254729984679" target="_blank">💬</a>
+</body>
+</html>
