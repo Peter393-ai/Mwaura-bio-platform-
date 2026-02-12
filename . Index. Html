@@ -1,0 +1,672 @@
+mwaura-bio-platform/
+│
+├─ public/
+│   ├─ index.html
+│   ├─ services.html
+│   ├─ machines.html
+│   ├─ blog.html
+│   ├─ contact.html
+│   ├─ dashboard.html
+│   ├─ style.css
+│   ├─ app.js
+│   └─ cv.pdf  (placeholder)
+│
+├─ server/
+│   ├─ server.js
+│   └─ routes/
+│       ├─ ai.js
+│       ├─ mpesa.js
+│       ├─ appointments.js
+│       ├─ equipment.js
+│       └─ staff.js
+│
+├─ database/
+│   └─ connection.js
+├─ .env  (placeholders)
+├─ package.json<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Services | Engineer Mwaura</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<nav>
+<h1>Engineer Mwaura</h1>
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="services.html">Services</a></li>
+<li><a href="machines.html">Machines</a></li>
+<li><a href="blog.html">Blog</a></li>
+<li><a href="contact.html">Contact</a></li>
+<li><a href="dashboard.html">Admin</a></li>
+</ul>
+</nav>
+
+<section>
+<h2>Our Professional Services</h2>
+<div class="grid">
+<div class="card"><h3>MRI & CT Systems</h3><p>Installation, maintenance, and troubleshooting of imaging systems.</p></div>
+<div class="card"><h3>ICU Equipment</h3><p>Maintenance and calibration of ventilators, monitors, and ICU systems.</p></div>
+<div class="card"><h3>Medical Training</h3><p>Staff training on equipment usage and safety protocols.</p></div>
+<div class="card"><h3>Calibration & Testing</h3><p>Ensure all biomedical devices are compliant and accurate.</p></div>
+</div>
+</section>
+
+<footer>© 2026 Engineer Mwaura | Biomedical Company</footer>
+<a class="whatsapp" href="https://wa.me/254729984679" target="_blank">💬</a>
+</body>
+</html><!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Machines | Engineer Mwaura</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<nav>
+<h1>Engineer Mwaura</h1>
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="services.html">Services</a></li>
+<li><a href="machines.html">Machines</a></li>
+<li><a href="blog.html">Blog</a></li>
+<li><a href="contact.html">Contact</a></li>
+<li><a href="dashboard.html">Admin</a></li>
+</ul>
+</nav>
+
+<section>
+<h2>Biomedical Machines</h2>
+<div class="grid">
+<div class="card"><h3>MRI Scanner</h3><p>High-resolution imaging systems for diagnostics.</p></div>
+<div class="card"><h3>CT Scanner</h3><p>Advanced computed tomography systems.</p></div>
+<div class="card"><h3>Ventilators</h3><p>ICU ventilator maintenance and calibration.</p></div>
+<div class="card"><h3>Patient Monitors</h3><p>Monitoring equipment for vital signs.</p></div>
+<div class="card"><h3>Dialysis Machines</h3><p>Hemodialysis systems and maintenance.</p></div>
+<div class="card"><h3>X-Ray Systems</h3><p>Diagnostic radiology equipment service.</p></div>
+</div>
+</section>
+
+<footer>© 2026 Engineer Mwaura | Biomedical Company</footer>
+<a class="whatsapp" href="https://wa.me/254729984679" target="_blank">💬</a>
+</body>
+</html><!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Engineer Mwaura | Biomedical Company</title>
+<link rel="stylesheet" href="style.css">
+<script src="app.js" defer></script>
+</head>
+<body>
+<nav>
+<h1>Engineer Mwaura</h1>
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="services.html">Services</a></li>
+<li><a href="machines.html">Machines</a></li>
+<li><a href="blog.html">Blog</a></li>
+<li><a href="contact.html">Contact</a></li>
+<li><a href="dashboard.html">Admin</a></li>
+</ul>
+</nav>
+
+<section>
+<h2>Welcome to Engineer Mwaura Biomedical Services</h2>
+<p>Advanced hospital equipment, maintenance, and AI support.</p>
+<a href="cv.pdf" download class="card">Download Company Brochure</a>
+</section>
+
+<section>
+<h2>Ask AI Assistant</h2>
+<input type="text" id="aiInput" placeholder="Ask about services">
+<button onclick="askAI()">Ask</button>
+<p id="aiReply"></p>
+</section>
+
+<footer>© 2026 Engineer Mwaura | Biomedical Company</footer>
+<a class="whatsapp" href="https://wa.me/254729984679" target="_blank">💬</a>
+</body>
+</html><!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin Dashboard | Engineer Mwaura</title>
+<link rel="stylesheet" href="style.css">
+<script src="app.js" defer></script>
+</head>
+<body>
+<nav>
+<h1>Admin Dashboard</h1>
+<ul>
+<li><a href="dashboard.html">Dashboard</a></li>
+<li><a href="index.html">Home</a></li>
+<li><a href="services.html">Services</a></li>
+<li><a href="machines.html">Machines</a></li>
+<li><a href="blog.html">Blog</a></li>
+<li><a href="contact.html">Contact</a></li>
+</ul>
+</nav>
+
+<section>
+<h2>Equipment Management</h2>
+<table id="equipmentTable">
+<tr><th>Name</th><th>Type</th><th>Location</th><th>Status</th></tr>
+<tr><td>MRI Scanner</td><td>Imaging</td><td>Radiology Dept.</td><td>Operational</td></tr>
+<tr><td>Ventilator</td><td>ICU</td><td>ICU Ward</td><td>Under Maintenance</td></tr>
+<tr><td>CT Scanner</td><td>Imaging</td><td>Radiology Dept.</td><td>Operational</td></tr>
+</table>
+<button onclick="addEquipment()">Add Equipment</button>
+</section>
+
+<section>
+<h2>Appointments</h2>
+<table id="appointmentsTable">
+<tr><th>Patient</th><th>Service</th><th>Date</th><th>Status</th></tr>
+<tr><td>John Doe</td><td>MRI Scan</td><td>2026-03-10</td><td>Confirmed</td></tr>
+<tr><td>Jane Smith</td><td>CT Scan</td><td>2026-03-12</td><td>Pending</td></tr>
+<tr><td>Emily Davis</td><td>Ventilator Check</td><td>2026-03-15</td><td>Completed</td></tr>
+</table>
+</section>
+
+<section>
+<h2>Payments</h2>
+<table id="paymentsTable">
+<tr><th>Phone</th><th>Amount</th><th>Date</th><th>Status</th></tr>
+<tr><td>+254729984679</td><td>5000 KES</td><td>2026-03-05</td><td>Completed</td></tr>
+<tr><td>+254701234567</td><td>3000 KES</td><td>2026-03-06</td><td>Pending</td></tr>
+<tr><td>+254712345678</td><td>4500 KES</td><td>2026-03-07</td><td>Completed</td></tr>
+</table>
+</section>
+
+<footer>© 2026 Engineer Mwaura | Biomedical Company</footer>
+</body>
+</html>/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #e6f0ff;
+    color: #003366;
+}
+
+nav {
+    background-color: #0059b3;
+    padding: 15px;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav h1 {
+    margin: 0;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+    margin: 0;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+section {
+    padding: 20px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background-color: #cce0ff;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+footer {
+    background-color: #0059b3;
+    color: white;
+    text-align: center;
+    padding: 15px;
+}
+
+.whatsapp {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    font-size: 30px;
+    text-decoration: none;
+    color: #25d366;
+}<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact | Engineer Mwaura</title>
+<link rel="stylesheet" href="style.css">
+<script src="app.js" defer></script>
+</head>
+<body>
+<nav>
+<h1>Engineer Mwaura</h1>
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="services.html">Services</a></li>
+<li><a href="machines.html">Machines</a></li>
+<li><a href="blog.html">Blog</a></li>
+<li><a href="contact.html">Contact</a></li>
+<li><a href="dashboard.html">Admin</a></li>
+</ul>
+</nav>
+
+<section>
+<h2>Ask AI Assistant</h2>
+<input type="text" id="aiInput" placeholder="Ask about services">
+<button onclick="askAI()">Ask</button>
+<p id="aiReply"></p>
+</section>
+
+<section>
+<h2>Pay for Services (M-Pesa)</h2>
+<input type="text" id="phone" placeholder="254729984679">
+<input type="number" id="amount" placeholder="Amount">
+<button onclick="pay()">Pay Now</button>
+<p id="paymentStatus"></p>
+</section>
+
+<footer>© 2026 Engineer Mwaura | Biomedical Company</footer>
+<a class="whatsapp" href="https://wa.me/254729984679" target="_blank">💬</a>
+</body>
+</html>/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #e6f0ff;
+    color: #003366;
+}
+
+nav {
+    background-color: #0059b3;
+    padding: 15px;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav h1 {
+    margin: 0;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+    margin: 0;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+section {
+    padding: 20px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background-color: #cce0ff;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+footer {
+    background-color: #0059b3;
+    color: white;
+    text-align: center;
+    padding: 15px;
+}
+
+.whatsapp {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    font-size: 30px;
+    text-decoration: none;
+    color: #25d366;
+}const express = require("express");
+const cors = require("cors");
+const bodyParser = require("body-parser");
+const dotenv = require("dotenv");
+const mongoose = require("mongoose");
+
+dotenv.config();
+
+const aiRoutes = require("./routes/ai");
+const mpesaRoutes = require("./routes/mpesa");
+const appointmentsRoutes = require("./routes/appointments");
+const equipmentRoutes = require("./routes/equipment");
+const staffRoutes = require("./routes/staff");
+
+const app = express();
+app.use(cors());
+app.use(bodyParser.json());
+
+// Routes
+app.use("/api/ai", aiRoutes);
+app.use("/api/mpesa", mpesaRoutes);
+app.use("/api/appointments", appointmentsRoutes);
+app.use("/api/equipment", equipmentRoutes);
+app.use("/api/staff", staffRoutes);
+
+// MongoDB connection
+mongoose.connect(process.env.MONGO_URI, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+}).then(() => console.log("MongoDB connected"))
+  .catch(err => console.log(err));
+
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, () => console.log(`Server running on port ${PORT}`));const express = require("express");
+const router = express.Router();
+
+// Placeholder AI response
+router.post("/", (req, res) => {
+    const { message } = req.body;
+    res.json({ reply: `AI says: You asked about "${message}". Contact Engineer Mwaura for details.` });
+});
+
+module.exports = router;// AI Chat Simulation
+async function askAI() {
+    const input = document.getElementById("aiInput").value;
+    const reply = document.getElementById("aiReply");
+    if(input === "") {
+        reply.innerText = "Please type a question!";
+        return;
+    }
+    reply.innerText = "Thinking...";
+    // Placeholder: Replace with your backend API
+    setTimeout(() => {
+        reply.innerText = `AI Reply: We have services related to "${input}". Contact us for details.`;
+    }, 1000);
+}
+
+// M-Pesa Payment Simulation
+function pay() {
+    const phone = document.getElementById("phone").value;
+    const amount = document.getElementById("amount").value;
+    const status = document.getElementById("paymentStatus");
+    if(phone === "" || amount === "") {
+        status.innerText = "Enter phone number and amount!";
+        return;
+    }
+    status.innerText = "Processing payment...";
+    setTimeout(() => {
+        status.innerText = `Payment of KES ${amount} from ${phone} successful!`;
+    }, 1500);
+}
+
+// Dashboard placeholder functions
+function addEquipment() {
+    alert("Function to add equipment will be connected to backend later.");
+}const express = require("express");
+const router = express.Router();
+
+// Placeholder appointments
+let appointments = [
+    { patient: "John Doe", service: "MRI Scan", date: "2026-03-10", status: "Confirmed" },
+    { patient: "Jane Smith", service: "CT Scan", date: "2026-03-12", status: "Pending" }
+];
+
+router.get("/", (req, res) => {
+    res.json(appointments);
+});
+
+router.post("/", (req, res) => {
+    appointments.push(req.body);
+    res.json({ status: "success", appointments });
+});
+
+module.exports = router;const express = require("express");
+const router = express.Router();
+
+// Placeholder equipment
+let equipment = [
+    { name: "MRI Scanner", type: "Imaging", location: "Radiology Dept.", status: "Operational" },
+    { name: "Ventilator", type: "ICU", location: "ICU Ward", status: "Under Maintenance" }
+];
+
+router.get("/", (req, res) => {
+    res.json(equipment);
+});
+
+router.post("/", (req, res) => {
+    equipment.push(req.body);
+    res.json({ status: "success", equipment });
+});
+
+module.exports = router;const express = require("express");
+const router = express.Router();
+
+// Placeholder M-Pesa STK Push
+router.post("/", (req, res) => {
+    const { phone, amount } = req.body;
+    res.json({ status: "success", message: `Simulated M-Pesa payment of KES ${amount} from ${phone}` });
+});
+
+module.exports = router;const express = require("express");
+const router = express.Router();
+
+// Placeholder staff
+let staff = [
+    { name: "Alice Mwangi", role: "Biomedical Engineer" },
+    { name: "James Otieno", role: "Technician" }
+];
+
+router.get("/", (req, res) => {
+    res.json(staff);
+});
+
+router.post("/", (req, res) => {
+    staff.push(req.body);
+    res.json({ status: "success", staff });
+});
+
+module.exports = router;const mongoose = require("mongoose");
+const dotenv = require("dotenv");
+
+dotenv.config();
+
+const connectDB = async () => {
+    try {
+        await mongoose.connect(process.env.MONGO_URI, {
+            useNewUrlParser: true,
+            useUnifiedTopology: true
+        });
+        console.log("MongoDB connected");
+    } catch (err) {
+        console.error(err);
+        process.exit(1);
+    }
+};
+
+module.exports = connectDB;mwaura-bio-platform/
+│
+├─ public/
+│   ├─ index.html
+│   ├─ services.html
+│   ├─ machines.html
+│   ├─ blog.html
+│   ├─ contact.html
+│   ├─ dashboard.html
+│   ├─ style.css
+│   ├─ app.js
+│   └─ cv.pdf (placeholder)
+│
+├─ server/
+│   ├─ server.js
+│   └─ routes/
+│       ├─ ai.js
+│       ├─ mpesa.js
+│       ├─ appointments.js
+│       ├─ equipment.js
+│       └─ staff.js
+│
+├─ database/
+│   └─ connection.js
+├─ .env
+├─ package.json<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blog | Engineer Mwaura</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<nav>
+<h1>Engineer Mwaura</h1>
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="services.html">Services</a></li>
+<li><a href="machines.html">Machines</a></li>
+<li><a href="blog.html">Blog</a></li>
+<li><a href="contact.html">Contact</a></li>
+<li><a href="dashboard.html">Admin</a></li>
+</ul>
+</nav>
+
+<section>
+<h2>Biomedical Insights</h2>
+<div class="grid">
+<div class="card"><h3>Preventive Maintenance in ICU</h3><p>How regular maintenance saves lives and money.</p></div>
+<div class="card"><h3>MRI Cryogen Monitoring</h3><p>Tips for keeping MRI systems safe and operational.</p></div>
+<div class="card"><h3>Troubleshooting Medical Devices</h3><p>Step-by-step guide for common issues.</p></div>
+<div class="card"><h3>Biomedical Engineering Careers</h3><p>Opportunities and skill development in hospitals.</p></div>
+</div>
+</section>
+
+<footer>© 2026 Engineer Mwaura | Biomedical Company</footer>
+<a class="whatsapp" href="https://wa.me/254729984679" target="_blank">💬</a>
+</body>
+</html>/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #e6f0ff;
+    color: #003366;
+}
+
+nav {
+    background-color: #0059b3;
+    padding: 15px;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav h1 { margin: 0; }
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+    margin: 0;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav ul li a:hover { text-decoration: underline; }
+
+section { padding: 20px; }
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background-color: #cce0ff;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+footer {
+    background-color: #0059b3;
+    color: white;
+    text-align: center;
+    padding: 15px;
+}
+
+.whatsapp {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    font-size: 30px;
+    text-decoration: none;
+    color: #25d366;
+}// AI Chat Simulation
+async function askAI() {
+    const input = document.getElementById("aiInput").value;
+    const reply = document.getElementById("aiReply");
+    if(input === "") { reply.innerText = "Please type a question!"; return; }
+    reply.innerText = "Thinking...";
+    setTimeout(() => {
+        reply.innerText = `AI Reply: We have services related to "${input}". Contact us for details.`;
+    }, 1000);
+}
+
+// M-Pesa Payment Simulation
+function pay() {
+    const phone = document.getElementById("phone").value;
+    const amount = document.getElementById("amount").value;
+    const status = document.getElementById("paymentStatus");
+    if(phone === "" || amount === "") { status.innerText = "Enter phone number and amount!"; return; }
+    status.innerText = "Processing payment...";
+    setTimeout(() => {
+        status.innerText = `Payment of KES ${amount} from ${phone} successful!`;
+    }, 1500);
+}
+
+// Dashboard placeholder functions
+function addEquipment() { alert("Function to add equipment will be connected to backend later."); }
